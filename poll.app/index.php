@@ -1,4 +1,4 @@
-<?php session_start();?>
+<?php session_start(); print_r($_SESSION['loggedIN']); ?>
 
 <!DOCTYPE html>
 <html>
@@ -62,7 +62,7 @@
 	<div class="container">
 	    <div class="col-md-3">
 	    	<?php
-	    		if (!isset($_SESSION['loggedIn'])) {
+	    		if (isset($_SESSION['loggedIn'])) {
 	    		?>
 	    			<div class="login">
 						<div class="">

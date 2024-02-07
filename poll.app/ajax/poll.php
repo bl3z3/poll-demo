@@ -1,5 +1,12 @@
 <?php
 	session_start();
+	
+	//check if user is logged in
+	//if (isset($_SESSION['loggedIn']))
+		//echo "true";
+	//else
+		//echo "not logged in";
+	//return;
 
 	require "_connect.php";
 
@@ -9,7 +16,7 @@
 	$check_poll = isset($_REQUEST['check']) ? $_GET['check'] : false;
 
 	if ($check_poll) {
-		$sql = "SELECT id FROM poll_result WHERE userid = '$user_id' AND pollid = '$poll_id';";
+		$sql = "SELECT id FROM `poll_result` WHERE userid = '$user_id' AND pollid = '$poll_id';";
 
 		$user_poll = mysqli_query($db, $sql);
 
